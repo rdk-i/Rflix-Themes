@@ -3825,19 +3825,22 @@ html {
   display: none !important;
 }
 
-/* Improve Section Title Spacing */
-.sectionTitle {
-  padding-top: 1.5em !important;
-  padding-bottom: 0.75em !important;
-  margin-top: 0.5em !important;
-  margin-bottom: 0.5em !important;
+/* Fix spacing between sections to prevent overlap with hero buttons */
+.section0,
+.homeSectionsContainer > div:first-child,
+[data-index="0"].homePageSection {
+  margin-top: 3em !important;
+  padding-top: 2em !important;
 }
 
-.section0 .sectionTitle {
-  padding-top: 1em !important;
-  padding-bottom: 0.5em !important;
+.verticalSection {
+  margin-top: 2em !important;
 }
 
+/* Ensure library cards have proper spacing */
+.itemsContainer {
+  margin-top: 1.5em !important;
+}
 
 /*Hide the top bar when the login page is visible*/
 body:has(#loginPage:not(.hide)) .skinHeader {
