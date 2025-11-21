@@ -3825,6 +3825,20 @@ html {
   display: none !important;
 }
 
+/* Improve Section Title Spacing */
+.sectionTitle {
+  padding-top: 1.5em !important;
+  padding-bottom: 0.75em !important;
+  margin-top: 0.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.section0 .sectionTitle {
+  padding-top: 1em !important;
+  padding-bottom: 0.5em !important;
+}
+
+
 /*Hide the top bar when the login page is visible*/
 body:has(#loginPage:not(.hide)) .skinHeader {
     display: none !important;
