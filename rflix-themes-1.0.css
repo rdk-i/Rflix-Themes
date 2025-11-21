@@ -103,7 +103,7 @@
 
     /* fill out YOUR-JELLYFIN-SERVER-ADDRESS with a relevant host address;
        url("<YOUR-JELLYFIN-SERVER-ADDRESS>/Branding/Splashscreen?format=webp&foregroundLayer=1&quality=33&width=3840&height=2160&blur=2"); */
-    --loginPageBgUrl: url("");
+    --loginPageBgUrl: url("https://rflix.web.id/Branding/Splashscreen?format=webp&foregroundLayer=1&quality=33&width=3840&height=2160&blur=2");
     --loginPageText: "Sign in to continue";
 
     /* use 2.8em keep the overlay play button at bottom-left corner [default];
@@ -120,7 +120,7 @@
 
     /* none: hides the media library card labels [default]; 
        block: makes them visible */
-    --libraryLabelVisibility: none;
+    --libraryLabelVisibility: block;
 
     /* use "" to enable the card hover effect [default]; 
        use none (without quotes) to disable it */
