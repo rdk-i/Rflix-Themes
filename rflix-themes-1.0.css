@@ -3827,25 +3827,42 @@ html {
 
 
 
-/* FORCE spacing for the first section (My Media) */
-.section0,
-.verticalSection.MyMedia,
-.verticalSection.section0 {
-  margin-top: 10vh !important; /* Use VH for responsive spacing relative to viewport */
-  padding-top: 2em !important;
-  position: relative !important;
-  z-index: 1 !important;
+
+
+/* ==================================================== */
+/* HERO OVERLAP FIX (SUPER AGGRESSIVE)                  */
+/* ==================================================== */
+
+/* Hide "My Media" title but KEEP the space */
+.section0 .sectionTitle {
+  visibility: hidden !important;
 }
 
-/* Ensure the items inside also have breathing room */
+/* 1. Push the entire container down */
+.homeSectionsContainer {
+  margin-top: 0.2vh !important;
+  padding-top: 0.8em !important;
+}
+
+/* 2. Push the first section (My Media) specifically */
+div[data-role="page"].homePage .verticalSection:first-child,
+.section0,
+.verticalSection.MyMedia {
+  margin-top: 0.2vh !important; 
+  padding-top: 0.8em !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* 3. Ensure items inside don't float up */
 .section0 .itemsContainer,
 .verticalSection.MyMedia .itemsContainer {
   margin-top: 1em !important;
 }
 
-/* General section spacing */
+/* 4. General spacing for other sections */
 .verticalSection {
-  margin-bottom: 2em !important;
+  margin-bottom: 1em !important;
 }
 
 /*Hide the top bar when the login page is visible*/
