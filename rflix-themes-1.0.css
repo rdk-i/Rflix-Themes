@@ -3825,9 +3825,6 @@ html {
   display: none !important;
 }
 
-/*Remove "My Media" title*/
-.section0 .sectionTitle {display: none;}
-
 /*Hide the top bar when the login page is visible*/
 body:has(#loginPage:not(.hide)) .skinHeader {
     display: none !important;
