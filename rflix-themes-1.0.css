@@ -3825,21 +3825,27 @@ html {
   display: none !important;
 }
 
-/* Fix spacing between sections to prevent overlap with hero buttons */
+
+
+/* FORCE spacing for the first section (My Media) */
 .section0,
-.homeSectionsContainer > div:first-child,
-[data-index="0"].homePageSection {
-  margin-top: 3em !important;
+.verticalSection.MyMedia,
+.verticalSection.section0 {
+  margin-top: 10vh !important; /* Use VH for responsive spacing relative to viewport */
   padding-top: 2em !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
+/* Ensure the items inside also have breathing room */
+.section0 .itemsContainer,
+.verticalSection.MyMedia .itemsContainer {
+  margin-top: 1em !important;
+}
+
+/* General section spacing */
 .verticalSection {
-  margin-top: 2em !important;
-}
-
-/* Ensure library cards have proper spacing */
-.itemsContainer {
-  margin-top: 1.5em !important;
+  margin-bottom: 2em !important;
 }
 
 /*Hide the top bar when the login page is visible*/
