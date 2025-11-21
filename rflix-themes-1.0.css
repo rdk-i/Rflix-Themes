@@ -3951,3 +3951,19 @@ body:not(:has(#loginPage:not(.hide))) .skinHeader {
   display: block !important;
   line-height: 1 !important;
 }
+
+/* ==================================================== */
+/* LIBRARY BUTTON HOVER EFFECT                          */
+/* ==================================================== */
+
+.homeLibraryButton {
+  transition: all 0.2s ease !important;
+}
+
+.homeLibraryButton:hover {
+  transform: scale(1.05) !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  z-index: 10 !important; /* Ensure it pops out above others */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3) !important;
+}
+
