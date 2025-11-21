@@ -1,0 +1,29 @@
+html {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Hide Button Forgot Password */
+#loginPage button.btnForgotPassword {
+  display: none !important;
+}
+
+/*Remove "My Media" title*/
+.section0 .sectionTitle {display: none;}
+
+/*Hide the top bar when the login page is visible*/
+body:has(#loginPage:not(.hide)) .skinHeader {
+    display: none !important;
+}
+/*Show the top bar when the login page is hidden or absent*/
+body:not(:has(#loginPage:not(.hide))) .skinHeader {
+    display: flex !important;
+}
+
+/*Hide "Please sign in" text, margin is to prevent login form moving too far up*/
+#loginPage h1 {display: none}
+#loginPage .padded-left.padded-right.padded-bottom-page {margin-top: 10px}
+
+/* Logo Rflix */
+.adminDrawerLogo img { content: url(hxttps://i.imgur.com/xhhDFSg.png) !important; } 
+.imgLogoIcon { content: url(https://i.imgur.com/xhhDFSg.png) !important; } 
+.pageTitleWithLogo { background-image: url(https://i.imgur.com/xhhDFSg.png) !important; }
