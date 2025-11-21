@@ -3887,24 +3887,67 @@ body:not(:has(#loginPage:not(.hide))) .skinHeader {
 /* JELLYFIN BUTTON PLAY FIX                             */
 /* ==================================================== */
 
+/* 1. Container Alignment */
+.button-container {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1em !important;
+}
+
+/* 2. UNIFIED BUTTON STYLE (Applies to ALL buttons: Info, Play, Favorite) */
 .button-container button {
-  height: 2.75em !important;
-  display: inline-flex !important;
+  width: 3em !important;
+  height: 3em !important;
+  min-width: 3em !important; /* Force minimum width */
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0.5em !important;
+  background-color: rgba(0, 0, 0, 0.6) !important; /* Uniform Dark Background */
+  border: 1px solid rgba(255, 255, 255, 0.2) !important; /* Uniform Border */
+  backdrop-filter: blur(4px) !important;
+  display: flex !important;
   justify-content: center !important;
   align-items: center !important;
+  box-shadow: none !important;
+  position: relative !important; /* Needed for absolute positioning of icons */
 }
 
-.button-container button.btnPlay.play-button {
-  width: 2.75em !important;
+/* Hover effect for all buttons */
+.button-container button:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  transform: scale(1.05);
+  transition: all 0.2s ease;
 }
 
-.button-container button.btnPlay.play-button .play-text,
-.button-container button.btnPlay.play-button .detailButton-content::after {
+/* 3. PLAY BUTTON SPECIFIC FIX */
+/* Hide any existing content inside the play button to prevent conflicts */
+.button-container button.btnPlay.play-button * {
   display: none !important;
-  content: none !important;
 }
 
-.button-container button.detailButton,
-.button-container button.btnPlay.play-button {
-  margin-top: 0.2px !important;
+/* Draw the Play Triangle using ::before and Absolute Positioning */
+.button-container button.btnPlay.play-button::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 55% !important; /* Slightly offset to right for optical centering */
+  transform: translate(-50%, -50%) !important;
+  
+  /* The Triangle */
+  width: 0 !important;
+  height: 0 !important;
+  border-style: solid !important;
+  border-width: 0.7em 0 0.7em 1.2em !important; /* Size of the triangle */
+  border-color: transparent transparent transparent #ffffff !important; /* White color */
+}
+
+/* 4. INFO & FAVORITE ICONS */
+/* Ensure icons are white and sized correctly */
+.button-container button i,
+.button-container button span.material-icons {
+  font-size: 1.6rem !important;
+  color: #ffffff !important;
+  display: block !important;
+  line-height: 1 !important;
 }
