@@ -3967,3 +3967,27 @@ body:not(:has(#loginPage:not(.hide))) .skinHeader {
   box-shadow: 0 4px 8px rgba(0,0,0,0.3) !important;
 }
 
+/* ==================================================== */
+/* MOBILE INTERACTIVITY FIX                             */
+/* ==================================================== */
+
+.button-container {
+  /* Restore absolute positioning so it stays in the hero area */
+  position: absolute !important; 
+  z-index: 100 !important; 
+}
+
+@media (max-width: 62em) {
+  .button-container {
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+    /* Ensure it's not pushed off-screen */
+    bottom: 20% !important; /* Adjust vertical position for mobile if needed */
+  }
+  
+  .button-container button {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+  }
+}
+
